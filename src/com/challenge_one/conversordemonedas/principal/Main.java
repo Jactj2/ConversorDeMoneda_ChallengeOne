@@ -5,24 +5,30 @@ import com.challenge_one.conversordemonedas.utils.References;
 
 import java.util.Scanner;
 
+import static com.challenge_one.conversordemonedas.utils.References.separatorTitle;
+
 public class Main {
     public static void main(String[] args) {
 
         Scanner keyboard = new Scanner(System.in);
-        var separator = "**************************************************";
+
 
         while(true){
-            System.out.println(separator);
+            System.out.println(separatorTitle);
             System.out.println("    Sea bienvenido/a al Conversor de Moneda =]\n ");
 
             for(var title: References.listTitles){
                 System.out.println(title);
             }
 
-            System.out.println(separator);
-            System.out.println("    Elija una opción valida");
-            var option = keyboard.nextInt();
-            if(option == 7){ break; }
+            System.out.println(separatorTitle);
+            var option = 0;
+            do {
+                System.out.println("    Elija una opción 1 - 7");
+                option = keyboard.nextInt();
+            } while (option <1 || option > 7);
+
+            if (option == 7) { break;}
 
             System.out.println(References.listTitles[option-1]);
             System.out.println("    Elija el monto que desea convertir");
@@ -49,22 +55,21 @@ public class Main {
                 case 6:
                     fromCurrency = "COP";
                     break;
-                default:
-                    System.out.println("Opción invalida");
-                    System.out.println("Elija una opcion valida");
-                    break;
             }
 
             var exchangeConnection = new Exchange();
-            exchangeConnection.setResult(References.listFinals[option-1]);
+            exchangeConnection.setResult(References.listFinals[option-1].substring(3));
             var result = exchangeConnection.convertCurrency(amount,fromCurrency,toCurrency);
+
+            System.out.println(References.separatorTicket);
             System.out.println(result);
+            System.out.println(References.separatorTicket + "\n" );
             
 
         }
-        System.out.println(separator);
+        System.out.println(separatorTitle);
         System.out.println("\n  El programa conversor de monedas a finalizado\n");
-        System.out.println(separator);
+        System.out.println(separatorTitle);
 
     }
 }

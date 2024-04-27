@@ -27,7 +27,7 @@ public class Exchange {
             HttpClient client = HttpClient.newHttpClient();
             URI direccion = URI.create("https://v6.exchangerate-api.com/v6/"+ APIKEY + "/latest/"+currency);
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(direccion).timeout(Duration.ofSeconds(2))
+                    .uri(direccion).timeout(Duration.ofSeconds(5))
                     .GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

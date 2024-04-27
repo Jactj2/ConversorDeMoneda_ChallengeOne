@@ -2,6 +2,8 @@ package com.challenge_one.conversordemonedas.utils;
 
 public class References {
 
+    public static  String separatorTitle    = "******************************************************";
+    public  static String separatorTicket   = "===                                                ===";
 
     public static String[] listTitles = {
             "   1) Dólar           =>> Peso Argentino",
@@ -12,12 +14,15 @@ public class References {
             "   6) Peso colombiano =>> Dólar",
             "   7) Salir\n"
     };
-    public static String[] listFinals = {
-            "===== %.2f Dólar           =>>     %f Peso Argentino =="  ,
-            "===== %.2f Peso Argentino  =>>     %.2f Dólar =========",
-            "===== %.2f Dólar           =>>     %.2f Real brasileño ",
-            "===== %.2f Real brasileño  =>>     %.2f Dólar =========",
-            "===== %.2f Dólar           =>>     %.2f Peso colombiano",
-            "===== %.2f Peso colombiano =>>     %.2f Dólar =========",
+
+    public static final String[] listFinals = {
+            "           %.2f Dólar      =>> %f Peso Argentino      "  ,
+            "       %.2f Peso Argentino     =>>     %.2f Dólar     ",
+            "           %.2f Dólar  =>> %.2f Real brasileño        ",
+            "           %.2f Real brasileño =>> %.2f Dólar         ",
+            "         %.2f Dólar  =>> %.2f Peso colombiano         ",
+            "         %.2f Peso colombiano =>>  %.2f Dólar         ",
     };
+
+
 }
