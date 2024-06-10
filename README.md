@@ -7,4 +7,4 @@ Para esto uno debe elegir el tipo de conversion.
 
 Despues agregar la cantidad a cambiar
 
-![Imagen del backend corriendo](\references\appImage.png)
+![Imagen del backend corriendo](https://github.com/Jactj2/ConversorDeMoneda_ChallengeOne/blob/master/references/appImage.png)
